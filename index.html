@@ -16,22 +16,52 @@
 </head>
 
 <body>
-
-  <!-- Home
-  About
-  Contact
-  Blog
-  Careers
-
+  <header class="header">
+    <nav class="nav">
+      <img src="images/logo.svg" alt="" class="nav__logo">
+      <ul class="nav__menu">
+        <li class="nav__list">
+          <a href="#" class="nav__link">Home</a>
+        </li>
+        <li class="nav__list">
+          <a href="#" class="nav__link">About</a>
+        </li>
+        <li class="nav__list">
+          <a href="#" class="nav__link">Contact</a>
+        </li>
+        <li class="nav__list">
+          <a href="#" class="nav__link">Blog</a>
+        </li>
+        <li class="nav__list">
+          <a href="#" class="nav__link">Careers</a>
+        </li>
+      </ul>
+      <button class="btn-request">Request Invite</button>
+      <label for="menu" class="nav__label nav__label--open">
+        <img src="images/icon-hamburger.svg" class="nav__icon" id="open">
+      </label>
+      <label for="menu" class="nav__label nav__label--close">
+        <img src="images/icon-close.svg" class="nav__icon" id="close">
+      </label>
+      <input type="checkbox" id="menu">
+    </nav>
+    <section class="hero">
+      <div class="hero-fi">
+        <picture class="pi">
+          <source srcset="images/bg-intro-desktop.svg" media="(min-width: 920px)">
+          <img src="images/bg-intro-mobile.svg" alt="Image" height="423">
+        </picture>
+        <img src="images/image-mockups.png" alt="" class="phone">
+      </div>
+      <div class="hero__info">
+        <h1 class="hero__title">Next generation digital banking</h1>
+        <p>Take your financial life online. Your Easybank account will be a one-stop-shop for spending, saving,
+          budgeting, investing, and much more.</p>
+      </div>
+    </section>
+  </header>
+  <!-- 
   Request Invite
-
-
-
-  Next generation digital banking
-
-  Take your financial life online. Your Easybank account will be a one-stop-shop
-  for spending, saving, budgeting, investing, and much more.
-
   Request Invite
 
 

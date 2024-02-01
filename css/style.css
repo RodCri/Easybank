@@ -13,6 +13,13 @@ body {
   font-family: "Public Sans", sans-serif;
 }
 
+@media (min-width: 920px) {
+  .header {
+    width: 90%;
+    max-width: 1440px;
+    margin: 0 auto;
+  }
+}
 .header .nav {
   --menu-mostrar: polygon(0 0, 100% 0, 100% 0, 0 0);
   --opacidad-abrir: 1;
@@ -29,8 +36,12 @@ body {
 }
 @media (min-width: 920px) {
   .header .nav {
-    grid-template-columns: max-content 1fr max-content;
+    grid-template-columns: max-content 1fr minmax(180px, max-content);
     grid-template-areas: "logo menu cta";
+    height: 80px;
+    background-color: #fff;
+    position: relative;
+    z-index: 11;
   }
 }
 .header .nav:has(:checked) {
@@ -53,11 +64,10 @@ body {
   gap: 4rem;
   place-content: center;
   text-align: center;
-  border-radius: 1rem;
   clip-path: var(--menu-mostrar);
   transition: clip-path 0.5s;
   justify-self: end;
-  z-index: 10;
+  z-index: 100;
 }
 @media (min-width: 920px) {
   .header .nav__menu {
@@ -69,6 +79,7 @@ body {
     grid-area: menu;
     align-self: center;
     position: relative;
+    z-index: 100;
   }
 }
 .header .nav__menu .nav__link {
@@ -91,11 +102,22 @@ body {
 }
 .header .nav .btn-request {
   display: none;
+  margin: 3rem 0;
+  color: hsl(0deg, 0%, 98%);
+  width: 160px;
+  height: 40px;
+  background: linear-gradient(95deg, rgb(49, 211, 92) 3%, rgb(43, 183, 218) 100%);
+  border-radius: 3rem;
+  border: none;
+  font-size: 1.5rem;
+  font-weight: 600;
 }
 @media (min-width: 920px) {
   .header .nav .btn-request {
     display: flex;
     grid-area: cta;
+    align-items: center;
+    justify-content: center;
   }
 }
 .header .nav__label {
@@ -158,12 +180,13 @@ body {
   display: flex;
   flex-direction: column;
   align-items: center;
-  gap: 2rem;
+  gap: 4rem;
 }
 @media (min-width: 920px) {
   .header .hero {
     flex-direction: row-reverse;
     align-items: center;
+    height: 600px;
   }
 }
 .header .hero-fi {
@@ -181,15 +204,122 @@ body {
   left: 0;
   object-fit: cover;
 }
+@media (min-width: 920px) {
+  .header .hero-fi .pi img {
+    width: 100%;
+    position: absolute;
+    top: 0;
+    left: 0%;
+    object-fit: fill;
+    height: 90%;
+  }
+}
 .header .hero-fi .phone {
   position: absolute;
   top: 0;
   right: 0;
   height: 100%;
   object-fit: contain;
+  width: 100%;
+}
+@media (min-width: 920px) {
+  .header .hero-fi .phone {
+    height: auto;
+    max-height: 780px;
+    position: relative;
+    z-index: 6;
+  }
 }
 .header .hero__info {
-  width: 80%;
+  width: 70%;
+  text-align: center;
+}
+@media (min-width: 920px) {
+  .header .hero__info {
+    text-align: left;
+    max-width: 450px;
+  }
+}
+.header .hero__info .hero__title {
+  font-size: 4rem;
+  font-weight: 300;
+  margin-bottom: 2rem;
+  color: hsl(233deg, 26%, 24%);
+}
+@media (min-width: 920px) {
+  .header .hero__info .hero__title {
+    font-size: 5rem;
+  }
+}
+.header .hero__info .hero__description {
+  font-size: 1.7rem;
+  line-height: 1.5;
+  color: hsl(233deg, 8%, 62%);
+}
+@media (min-width: 920px) {
+  .header .hero__info .hero__description {
+    font-size: 1.77rem;
+  }
+}
+.header .hero__info .btn-request {
+  margin: 3rem 0;
+  color: hsl(0deg, 0%, 98%);
+  width: 160px;
+  height: 40px;
+  background: linear-gradient(95deg, rgb(49, 211, 92) 3%, rgb(43, 183, 218) 100%);
+  border-radius: 3rem;
+  border: none;
+  font-size: 1.5rem;
+  font-weight: 600;
+}
+
+.why {
+  width: 100%;
+  max-width: 1440px;
+  margin: 0 auto;
+  background-color: #f0f2f2;
+  padding: 4rem;
+}
+.why .why__header {
+  display: flex;
+  flex-direction: column;
+  gap: 2rem;
+  max-width: 600px;
+  margin-bottom: 4rem;
+}
+.why .why__header .why__title {
+  font-size: 3rem;
+  font-weight: 300;
+}
+.why .why__header .why__description {
+  font-size: 1.6rem;
+  line-height: 1.5;
+  color: hsl(233deg, 8%, 62%);
+}
+.why .why__cards {
+  z-index: -1;
+  display: flex;
+  gap: 2rem;
+  flex-wrap: wrap;
+}
+.why .why__cards .why__card {
+  width: 280px;
+  display: flex;
+  flex-direction: column;
+  gap: 1.5rem;
+}
+.why .why__cards .why__card .why__cardImg {
+  width: 74px;
+  height: 74px;
+}
+.why .why__cards .why__card .why__cardTitle {
+  font-size: 2rem;
+  font-weight: 400;
+}
+.why .why__cards .why__card .why__cardInfo {
+  font-size: 1.5rem;
+  line-height: 1.5;
+  color: hsl(233deg, 8%, 62%);
 }
 
 /*# sourceMappingURL=style.css.map */

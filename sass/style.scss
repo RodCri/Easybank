@@ -13,6 +13,11 @@ body{
   font-family: 'Public Sans', sans-serif;
 }
 .header{
+  @media (min-width:920px) {
+    width: 90%;
+    max-width: 1440px;
+    margin: 0 auto;
+  }
   .nav{
     --menu-mostrar: polygon(0 0, 100% 0, 100% 0, 0 0);;
     --opacidad-abrir: 1;
@@ -27,8 +32,12 @@ body{
     height: 64px;
     padding: 0 24px;
     @media(min-width:920px){
-      grid-template-columns: max-content 1fr max-content;
+      grid-template-columns: max-content 1fr minmax(180px,max-content);
       grid-template-areas: "logo menu cta";
+      height: 80px;
+      background-color: #fff;
+      position: relative;
+      z-index: 11;
     }
     &:has(:checked) {
       --menu-mostrar: polygon(0 0, 100% 0, 100% 100%, 0 100%);;
@@ -50,11 +59,10 @@ body{
       gap: 4rem;
       place-content: center;
       text-align: center;
-      border-radius: 1rem;
       clip-path: var(--menu-mostrar);
       transition: clip-path 0.5s;
       justify-self: end;
-      z-index: 10;
+      z-index: 100;
       @media (min-width:920px) {
         clip-path: none;
         inset: initial;
@@ -64,6 +72,7 @@ body{
         grid-area: menu;
         align-self: center;
         position: relative;
+        z-index: 100;
       }
       .nav__link {
         text-decoration: none;
@@ -84,9 +93,12 @@ body{
     }
     .btn-request{
       display: none;
+      @include m.btn-request;
       @media(min-width: 920px){
         display: flex;
         grid-area: cta;
+        align-items: center;
+        justify-content: center;
       }
     }
     &__label {
@@ -144,10 +156,11 @@ body{
     display: flex;
     flex-direction: column;
     align-items: center;
-    gap: 2rem;
+    gap: 4rem;
     @media(min-width: 920px){
       flex-direction: row-reverse;
       align-items: center;
+      height: 600px;
     }
     &-fi{
       width: 100%;
@@ -161,6 +174,14 @@ body{
           position: relative;
           left: 0;
           object-fit: cover;
+          @media (min-width:920px) {
+            width: 100%;
+            position: absolute;
+            top: 0;
+            left: 0%;
+            object-fit: fill;
+            height: 90%
+          }
         }
       }
       .phone{
@@ -169,10 +190,90 @@ body{
         right: 0;
         height: 100%;
         object-fit: contain;
-          }
+        width: 100%;
+        @media (min-width:920px) {
+          height: auto;
+          max-height: 780px;
+          position: relative;
+          z-index: 6;
+        }
+      }
     }
     &__info{
-width: 80%;
+      width: 70%;
+      text-align: center;
+      @media (min-width:920px) {
+        text-align: left;
+        max-width: 450px;
+      }
+      .hero__title{
+        font-size: 4rem;
+        font-weight: 300;
+        margin-bottom: 2rem;
+        color: v.$dark-blue;
+        @media (min-width:920px) {
+          font-size: 5rem;
+        }
+      }
+      .hero__description{
+        font-size: 1.7rem;
+        line-height: 1.5;
+        color: v.$grayish-blue;
+        @media (min-width:920px) {
+          font-size: 1.77rem;
+        }
+      }
+      .btn-request{
+        @include m.btn-request;
+      }
+    }
+  }
+}
+.why{
+  width: 100%;
+  max-width: 1440px;
+  margin: 0 auto;
+  background-color: #f0f2f2;
+  padding: 4rem;
+  .why__header{
+    display: flex;
+    flex-direction: column;
+    gap: 2rem;
+    max-width: 600px;
+    margin-bottom: 4rem;
+    .why__title{
+      font-size: 3rem;
+      font-weight: 300;
+    }
+    .why__description{
+      font-size: 1.6rem;
+      line-height: 1.5;
+      color: v.$grayish-blue;
+    }
+  }
+  .why__cards{
+    z-index: -1;
+    display: flex;
+    gap: 2rem;
+    flex-wrap: wrap;
+    .why__card{
+      width: 280px;
+      display: flex;
+      flex-direction: column;
+      gap: 1.5rem;
+      .why__cardImg{
+        width: 74px;
+        height: 74px;
+      }
+      .why__cardTitle{
+        font-size: 2rem;
+        font-weight: 400;
+      }
+      .why__cardInfo{
+        font-size: 1.5rem;
+        line-height: 1.5;
+        color: v.$grayish-blue;
+      }
     }
   }
 }

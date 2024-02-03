@@ -377,7 +377,7 @@ body {
 .articles .articles__cards {
   display: flex;
   flex-direction: row;
-  row-gap: 30px;
+  gap: 30px;
   flex-wrap: wrap;
   justify-content: center;
   align-items: center;
@@ -437,6 +437,60 @@ body {
   font-size: 1.5rem;
   color: hsl(233deg, 8%, 62%);
   line-height: 1.5;
+}
+
+.footer {
+  background-color: hsl(233deg, 26%, 24%);
+  color: hsl(0deg, 0%, 100%);
+  padding: 40px 0;
+  width: 100%;
+  max-width: 1440px;
+  margin: 0 auto;
+  display: grid;
+  grid-template-columns: 1fr;
+  grid-template-rows: repeat(6, max-content);
+  justify-items: center;
+}
+@media (min-width: 920px) {
+  .footer {
+    grid-template-columns: repeat(2, 1fr);
+    grid-template-rows: repeat(3, max-content);
+    align-items: center;
+  }
+}
+.footer__logo {
+  margin: 2rem 0;
+}
+.footer__social {
+  display: flex;
+  gap: 1.5rem;
+  margin: 2rem 0;
+}
+.footer__menu {
+  list-style: none;
+  text-align: center;
+  display: flex;
+  flex-direction: column;
+}
+.footer__menu .footer__menuItem {
+  margin: 1rem 0;
+  color: hsl(220deg, 16%, 96%);
+  font-size: 1.4rem;
+}
+.footer__cta {
+  margin: 3rem 0;
+  color: hsl(0deg, 0%, 98%);
+  width: 160px;
+  height: 40px;
+  background: linear-gradient(95deg, rgb(49, 211, 92) 3%, rgb(43, 183, 218) 100%);
+  border-radius: 3rem;
+  border: none;
+  font-size: 1.5rem;
+  font-weight: 600;
+}
+.footer__copy {
+  font-size: 1.5rem;
+  color: hsl(233deg, 8%, 62%);
 }
 
 /*# sourceMappingURL=style.css.map */

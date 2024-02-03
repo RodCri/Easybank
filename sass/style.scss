@@ -319,7 +319,7 @@ body{
   .articles__cards{
     display: flex;
     flex-direction: row;
-    row-gap: 30px;
+    gap: 30px;
     flex-wrap: wrap;
     justify-content: center;
     align-items: center;
@@ -374,5 +374,45 @@ body{
   }
 }
 .footer{
-  
+  background-color: v.$dark-blue;
+  color: v.$white;
+  padding: 40px 0;
+  width: 100%;
+  max-width: 1440px;
+  margin: 0 auto;
+  display: grid;
+  grid-template-columns: 1fr;
+  grid-template-rows: repeat(6, max-content);
+  justify-items: center;
+  @media (min-width:920px) {
+    grid-template-columns: repeat(2,1fr);
+    grid-template-rows: repeat(3,max-content);
+    align-items: center;
+  }
+  &__logo{
+    margin: 2rem 0;
+  }
+  &__social{
+    display: flex;
+    gap: 1.5rem;
+    margin: 2rem 0;
+  }
+  &__menu{
+    list-style: none;
+    text-align: center;
+    display: flex;
+    flex-direction: column;
+    .footer__menuItem{
+      margin: 1rem 0;
+      color: v.$light-grayish-blue;
+      font-size: 1.4rem
+    }
+  }
+  &__cta{
+    @include m.btn-request;
+  }
+  &__copy{
+    font-size: 1.5rem;
+    color: v.$grayish-blue;
+  }
 }

@@ -87,6 +87,7 @@ body{
         }
         &:hover {
           color: v.$lime-green;
+          padding-bottom: 16px;
           border-bottom: 2px solid v.$lime-green;
         }
       }
@@ -376,7 +377,7 @@ body{
 .footer{
   background-color: v.$dark-blue;
   color: v.$white;
-  padding: 40px 0;
+  padding: 40px;
   width: 100%;
   max-width: 1440px;
   margin: 0 auto;
@@ -389,6 +390,10 @@ body{
     grid-template-rows: repeat(3,max-content);
     align-items: center;
   }
+  @media (min-width:1024px) {
+    grid-template-columns: repeat(4,1fr);
+    grid-template-rows: repeat(2,max-content);
+  }
   &__logo{
     margin: 2rem 0;
   }
@@ -396,23 +401,50 @@ body{
     display: flex;
     gap: 1.5rem;
     margin: 2rem 0;
+    cursor: pointer;
+    @media (min-width:1024px) {
+      grid-column: 1 / 1;
+      grid-row: 2;
+    }
+    svg:hover{
+      path{
+        fill: v.$lime-green;
+      }
+    }
   }
   &__menu{
     list-style: none;
     text-align: center;
     display: flex;
     flex-direction: column;
+    cursor: pointer;
     .footer__menuItem{
       margin: 1rem 0;
       color: v.$light-grayish-blue;
-      font-size: 1.4rem
+      font-size: 1.4rem;
+      transition: all .3s ease;
+      &:hover{
+        color: v.$lime-green;
+      }
+    }
+    @media (min-width:1024px) {
+      grid-row: span 2;
+      text-align: left;
     }
   }
   &__cta{
     @include m.btn-request;
+    @media (min-width:1024px) {
+      place-self: end;
+    }
   }
   &__copy{
     font-size: 1.5rem;
     color: v.$grayish-blue;
+    @media (min-width:1024px) {
+      grid-column: 4 / 4;
+      grid-row: 2;
+      justify-self: end;
+    }
   }
 }

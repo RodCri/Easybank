@@ -98,6 +98,7 @@ body {
 }
 .header .nav__menu .nav__link:hover {
   color: hsl(136deg, 65%, 51%);
+  padding-bottom: 16px;
   border-bottom: 2px solid hsl(136deg, 65%, 51%);
 }
 .header .nav .btn-request {
@@ -111,6 +112,11 @@ body {
   border: none;
   font-size: 1.5rem;
   font-weight: 600;
+  cursor: pointer;
+  transition: all 0.3s ease;
+}
+.header .nav .btn-request:hover {
+  background: linear-gradient(95deg, rgb(132, 226, 166) 3%, rgb(43, 183, 218) 100%);
 }
 @media (min-width: 920px) {
   .header .nav .btn-request {
@@ -271,6 +277,11 @@ body {
   border: none;
   font-size: 1.5rem;
   font-weight: 600;
+  cursor: pointer;
+  transition: all 0.3s ease;
+}
+.header .hero__info .btn-request:hover {
+  background: linear-gradient(95deg, rgb(132, 226, 166) 3%, rgb(43, 183, 218) 100%);
 }
 
 .why {
@@ -442,7 +453,7 @@ body {
 .footer {
   background-color: hsl(233deg, 26%, 24%);
   color: hsl(0deg, 0%, 100%);
-  padding: 40px 0;
+  padding: 40px;
   width: 100%;
   max-width: 1440px;
   margin: 0 auto;
@@ -458,6 +469,12 @@ body {
     align-items: center;
   }
 }
+@media (min-width: 1024px) {
+  .footer {
+    grid-template-columns: repeat(4, 1fr);
+    grid-template-rows: repeat(2, max-content);
+  }
+}
 .footer__logo {
   margin: 2rem 0;
 }
@@ -465,17 +482,38 @@ body {
   display: flex;
   gap: 1.5rem;
   margin: 2rem 0;
+  cursor: pointer;
+}
+@media (min-width: 1024px) {
+  .footer__social {
+    grid-column: 1/1;
+    grid-row: 2;
+  }
+}
+.footer__social svg:hover path {
+  fill: hsl(136deg, 65%, 51%);
 }
 .footer__menu {
   list-style: none;
   text-align: center;
   display: flex;
   flex-direction: column;
+  cursor: pointer;
 }
 .footer__menu .footer__menuItem {
   margin: 1rem 0;
   color: hsl(220deg, 16%, 96%);
   font-size: 1.4rem;
+  transition: all 0.3s ease;
+}
+.footer__menu .footer__menuItem:hover {
+  color: hsl(136deg, 65%, 51%);
+}
+@media (min-width: 1024px) {
+  .footer__menu {
+    grid-row: span 2;
+    text-align: left;
+  }
 }
 .footer__cta {
   margin: 3rem 0;
@@ -487,10 +525,27 @@ body {
   border: none;
   font-size: 1.5rem;
   font-weight: 600;
+  cursor: pointer;
+  transition: all 0.3s ease;
+}
+.footer__cta:hover {
+  background: linear-gradient(95deg, rgb(132, 226, 166) 3%, rgb(43, 183, 218) 100%);
+}
+@media (min-width: 1024px) {
+  .footer__cta {
+    place-self: end;
+  }
 }
 .footer__copy {
   font-size: 1.5rem;
   color: hsl(233deg, 8%, 62%);
+}
+@media (min-width: 1024px) {
+  .footer__copy {
+    grid-column: 4/4;
+    grid-row: 2;
+    justify-self: end;
+  }
 }
 
 /*# sourceMappingURL=style.css.map */

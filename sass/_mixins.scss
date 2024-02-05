@@ -9,4 +9,9 @@
   border: none;
   font-size: 1.5rem;
   font-weight: 600;
+  cursor: pointer;
+  transition: all .3s ease;
+  &:hover{
+    background: linear-gradient(95deg, rgba(132,226,166,1) 3%, rgba(43,183,218,1) 100%);
+  }
 }
